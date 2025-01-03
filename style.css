@@ -1,0 +1,168 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define Color Variables */
+:root {
+    --heading-color: #0047AB;
+    --background-color: #f4f4f9;
+    --text-color: black;
+    --font-family-primary: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    font-family: var(--font-family-primary), sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+/* Resume Container */
+.resume-container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+    padding: 20px;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--heading-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--font-family-primary), sans-serif;
+}
+
+/* Contact Info Section */
+.contact-info {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-info a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--heading-color);
+    transform: scale(1.05);
+}
+
+.contact-info i {
+    color: var(--text-color);
+    margin-right: 5px;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover i {
+    color: var(--heading-color);
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Sections Styling */
+h2 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--heading-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    font-family: var(--font-family-primary), sans-serif;
+}
+
+p,
+li {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-family: var(--font-family-primary), sans-serif;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+strong {
+    color: var(--heading-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-container {
+        padding: 15px;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.contact-info {
+    animation: fadeIn 1s ease-in-out;
+}
+
+li {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.1s;
+}
+
