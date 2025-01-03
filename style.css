@@ -23,6 +23,7 @@ body {
     min-height: 100vh;
     padding: 20px;
     color: var(--text-color);
+    font-size:0.9em;
 }
 
 section {
@@ -60,11 +61,12 @@ section {
 /* Contact Info Section */
 .contact-info {
     margin-top: 2.5px;
-    font-size: 1rem;
+    font-size: 1em;
     color: #666;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font-style: bold;
     /* Center content on larger screens */
     gap: 5px;
     /* Add space between contact items */
@@ -90,8 +92,10 @@ section {
     transition: color 0.3s ease;
 }
 
-.contact-info a:hover i {
+.contact-info i:hover {
     color: var(--heading-color);
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
 }
 
 /* Content Layout */
@@ -143,6 +147,10 @@ ul {
     margin-left: 20px;
 }
 
+.skill{
+    margin-bottom: 10px;
+}
+
 /* Responsive Design for Contact Info on Small Screens */
 @media (max-width: 768px) {
     .contact-info {
@@ -171,31 +179,57 @@ ul {
 }
 
 /* Animations */
-@keyframes fadeIn {
-    0% {
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
         opacity: 0;
-        transform: translateY(-20px);
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 
     100% {
-        opacity: 1;
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
-h2 {
-    animation: fadeIn 0.7s ease-in-out;
+.header {
+    animation: slideDown 0.5s ease-out;
 }
 
-.contact-info {
-    animation: fadeIn 1s ease-in-out;
+.left-column {
+    animation: slideInLeft 0.5s ease-out;
 }
 
-li {
-    animation: fadeIn 1s ease-in-out;
-    animation-delay: 0.1s;
+.right-column {
+    animation: slideInRight 0.5s ease-out;
 }
 
 .year{
     text-align: end;
 }
+
+/*End*/
